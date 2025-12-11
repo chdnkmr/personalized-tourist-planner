@@ -1,0 +1,12 @@
+{
+  "startLocation": "Bengaluru, Karnataka",
+  "placeTypes": ["hills", "nature", "historical"],
+  "budget": 75000,
+  "durationDays": 7,
+  "groupSize": 5,
+  "vehicleType": "Nexon EV",
+  "preferences": ["EV charging", "fine dining", "adventure activities"],
+  "maxDistanceKm": 400,
+  "llmProvider": "anthropic",
+  "verbose": true
+}

@@ -1,0 +1,131 @@
+{
+  "title": "Personalized Tourist Planner Input",
+  "description": "Input schema for the Personalized Tourist Planner Actor",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startLocation": {
+      "title": "Start Location",
+      "description": "The city and state to start the trip from (e.g., 'Bengaluru, Karnataka')",
+      "type": "string",
+      "default": "Bengaluru, Karnataka",
+      "editor": "textfield"
+    },
+    "placeTypes": {
+      "title": "Place Types to Visit",
+      "description": "Select types of attractions you'd like to visit",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "beaches",
+          "hills",
+          "temples",
+          "historical",
+          "wildlife",
+          "shopping",
+          "nature"
+        ]
+      },
+      "default": ["beaches", "hills"],
+      "editor": "checkbox"
+    },
+    "budget": {
+      "title": "Budget (₹)",
+      "description": "Total budget for the entire trip in Indian Rupees",
+      "type": "integer",
+      "minimum": 10000,
+      "maximum": 500000,
+      "default": 50000,
+      "editor": "number"
+    },
+    "durationDays": {
+      "title": "Trip Duration (Days)",
+      "description": "Number of days for the trip",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 30,
+      "default": 5,
+      "editor": "number"
+    },
+    "groupSize": {
+      "title": "Group Size",
+      "description": "Number of people traveling",
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 20,
+      "default": 4,
+      "editor": "number"
+    },
+    "vehicleType": {
+      "title": "Vehicle Type",
+      "description": "Type of vehicle for the trip",
+      "type": "string",
+      "enum": [
+        "sedan",
+        "SUV",
+        "EV",
+        "XUV700",
+        "Creta",
+        "Fortuner",
+        "Swift",
+        "Dzire",
+        "Innova"
+      ],
+      "default": "XUV700",
+      "editor": "select"
+    },
+    "preferences": {
+      "title": "Special Preferences",
+      "description": "Select your travel preferences",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "gym stops",
+          "EV charging",
+          "luxury hotels",
+          "budget accommodation",
+          "fine dining",
+          "local cuisine",
+          "adventure activities",
+          "cultural experiences"
+        ]
+      },
+      "default": ["gym stops", "EV charging"],
+      "editor": "checkbox"
+    },
+    "maxDistanceKm": {
+      "title": "Maximum Distance (km)",
+      "description": "Maximum distance from start location to explore",
+      "type": "integer",
+      "minimum": 50,
+      "maximum": 1000,
+      "default": 500,
+      "editor": "number"
+    },
+    "llmProvider": {
+      "title": "AI Model Provider",
+      "description": "Choose which AI model to use for itinerary generation",
+      "type": "string",
+      "enum": [
+        "anthropic",
+        "openai"
+      ],
+      "default": "anthropic",
+      "editor": "select"
+    },
+    "verbose": {
+      "title": "Verbose Logging",
+      "description": "Enable detailed logging for debugging",
+      "type": "boolean",
+      "default": false,
+      "editor": "checkbox"
+    }
+  },
+  "required": [
+    "startLocation",
+    "budget",
+    "durationDays"
+  ]
+}

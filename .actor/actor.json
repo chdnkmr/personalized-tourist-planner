@@ -1,0 +1,54 @@
+{
+  "actorSpecification": 1,
+  "name": "personalized-tourist-planner",
+  "title": "Personalized Tourist Planner",
+  "description": "AI-powered actor that generates personalized tourist itineraries for Indian destinations using real-time data scraping and LLM optimization. Creates optimized day-by-day plans with cost breakdowns, accommodation suggestions, and risk assessments.",
+  "version": "1.0.0",
+  "meta": {
+    "maintainers": [
+      "Your Name"
+    ],
+    "changelog": [
+      {
+        "version": "1.0.0",
+        "releaseDate": "2025-12-11",
+        "changes": [
+          "Initial release of Personalized Tourist Planner Actor",
+          "AI-powered itinerary generation with Claude 3.5 Sonnet or GPT-4o",
+          "Real-time data integration from 7 sources",
+          "Cost estimation with ±10% accuracy",
+          "Weather forecasting and risk assessment",
+          "Support for 14 vehicle types and 12 user preferences"
+        ]
+      }
+    ]
+  },
+  "input": "../input_schema.json",
+  "output": "./output_schema.json",
+  "dockerfile": "../Dockerfile",
+  "buildTag": "latest",
+  "env": {
+    "APIFY_HEADLESS": "1"
+  },
+  "platform": {
+    "minMemMbytes": 512,
+    "maxMemMbytes": 2048
+  },
+  "category": [
+    "TRAVEL",
+    "DATA_ANALYSIS",
+    "PRODUCTIVITY"
+  ],
+  "tags": [
+    "travel-planner",
+    "itinerary-generator",
+    "tourism",
+    "india",
+    "ai-optimization",
+    "cost-calculator",
+    "trip-planning",
+    "weather-integration",
+    "llm",
+    "travel-ai"
+  ]
+}

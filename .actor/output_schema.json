@@ -1,0 +1,239 @@
+{
+  "title": "Personalized Tourist Planner Output",
+  "description": "Generated itinerary with cost breakdown and recommendations",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "success": {
+      "type": "boolean",
+      "description": "Whether the itinerary generation was successful"
+    },
+    "startLocation": {
+      "type": "object",
+      "description": "Geocoded start location details",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "longitude": {
+          "type": "number"
+        }
+      }
+    },
+    "totalCost": {
+      "type": "number",
+      "description": "Total estimated cost in INR"
+    },
+    "costBreakdown": {
+      "type": "object",
+      "description": "Detailed cost breakdown",
+      "properties": {
+        "fuel": {
+          "type": "number"
+        },
+        "stay": {
+          "type": "number"
+        },
+        "food": {
+          "type": "number"
+        },
+        "attractions": {
+          "type": "number"
+        },
+        "misc": {
+          "type": "number"
+        }
+      }
+    },
+    "costEstimateAccuracy": {
+      "type": "string",
+      "description": "Accuracy range of cost estimate",
+      "example": "±10%"
+    },
+    "itinerary": {
+      "type": "array",
+      "description": "Day-by-day itinerary",
+      "items": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "integer"
+          },
+          "places": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "distance": {
+            "type": "number",
+            "description": "Distance for the day in km"
+          },
+          "cost": {
+            "type": "number",
+            "description": "Estimated cost for the day"
+          },
+          "activities": {
+            "type": "string",
+            "description": "List of activities and notes"
+          },
+          "accommodation": {
+            "type": "string",
+            "description": "Recommended accommodation type"
+          },
+          "meals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Meal recommendations"
+          },
+          "weatherForecast": {
+            "type": "string",
+            "description": "Weather forecast if available"
+          }
+        }
+      }
+    },
+    "attractions": {
+      "type": "array",
+      "description": "Detailed information about attractions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "distanceFromStart": {
+            "type": "number"
+          },
+          "description": {
+            "type": "string"
+          },
+          "entryFee": {
+            "type": "number"
+          },
+          "openingHours": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    },
+    "transportation": {
+      "type": "object",
+      "description": "Transportation details",
+      "properties": {
+        "vehicleType": {
+          "type": "string"
+        },
+        "totalDistanceKm": {
+          "type": "number"
+        },
+        "fuelNeeded": {
+          "type": "number",
+          "description": "Estimated fuel needed in liters"
+        },
+        "fuelCostEstimate": {
+          "type": "number"
+        },
+        "mileage": {
+          "type": "number",
+          "description": "Assumed km per liter"
+        },
+        "chargingStops": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "EV charging stations if applicable"
+        }
+      }
+    },
+    "accommodations": {
+      "type": "array",
+      "description": "Recommended accommodations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "pricePerNight": {
+            "type": "number"
+          },
+          "rating": {
+            "type": "string"
+          },
+          "amenities": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "description": "Potential risks and considerations",
+      "items": {
+        "type": "string"
+      },
+      "example": [
+        "Monsoon delays",
+        "Fuel price fluctuations",
+        "Weather changes"
+      ]
+    },
+    "recommendations": {
+      "type": "array",
+      "description": "Additional recommendations",
+      "items": {
+        "type": "string"
+      }
+    },
+    "maps": {
+      "type": "array",
+      "description": "Map URLs for navigation",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generatedAt": {
+      "type": "string",
+      "description": "Timestamp when itinerary was generated",
+      "format": "date-time"
+    },
+    "llmModel": {
+      "type": "string",
+      "description": "LLM model used for optimization"
+    },
+    "error": {
+      "type": "string",
+      "description": "Error message if generation failed"
+    }
+  }
+}
