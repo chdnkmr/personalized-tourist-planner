@@ -28,7 +28,7 @@
         ]
       },
       "default": ["beaches", "hills"],
-      "editor": "checkbox"
+      "editor": "select"
     },
     "budget": {
       "title": "Budget (₹)",
@@ -93,7 +93,7 @@
         ]
       },
       "default": ["gym stops", "EV charging"],
-      "editor": "checkbox"
+      "editor": "select"
     },
     "maxDistanceKm": {
       "title": "Maximum Distance (km)",
