@@ -5,60 +5,24 @@
   "actorOutputSchemaVersion": 1,
   "properties": {
     "success": {
-      "type": "boolean",
+      "type": "string",
       "description": "Whether the itinerary generation was successful",
       "template": "boolean"
     },
     "startLocation": {
-      "type": "object",
+      "type": "string",
       "description": "Geocoded start location details",
-      "template": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "template": "string"
-        },
-        "latitude": {
-          "type": "number",
-          "template": "number"
-        },
-        "longitude": {
-          "type": "number",
-          "template": "number"
-        }
-      }
+      "template": "object"
     },
     "totalCost": {
-      "type": "number",
+      "type": "string",
       "description": "Total estimated cost in INR",
       "template": "number"
     },
     "costBreakdown": {
-      "type": "object",
+      "type": "string",
       "description": "Detailed cost breakdown",
-      "template": "object",
-      "properties": {
-        "fuel": {
-          "type": "number",
-          "template": "number"
-        },
-        "stay": {
-          "type": "number",
-          "template": "number"
-        },
-        "food": {
-          "type": "number",
-          "template": "number"
-        },
-        "attractions": {
-          "type": "number",
-          "template": "number"
-        },
-        "misc": {
-          "type": "number",
-          "template": "number"
-        }
-      }
+      "template": "object"
     },
     "costEstimateAccuracy": {
       "type": "string",
@@ -66,214 +30,39 @@
       "template": "string"
     },
     "itinerary": {
-      "type": "array",
+      "type": "string",
       "description": "Day-by-day itinerary",
-      "template": "array",
-      "items": {
-        "type": "object",
-        "template": "object",
-        "properties": {
-          "day": {
-            "type": "integer",
-            "template": "number"
-          },
-          "places": {
-            "type": "array",
-            "template": "array",
-            "items": {
-              "type": "string",
-              "template": "string"
-            }
-          },
-          "distance": {
-            "type": "number",
-            "description": "Distance for the day in km",
-            "template": "number"
-          },
-          "cost": {
-            "type": "number",
-            "description": "Estimated cost for the day",
-            "template": "number"
-          },
-          "activities": {
-            "type": "string",
-            "description": "List of activities and notes",
-            "template": "string"
-          },
-          "accommodation": {
-            "type": "string",
-            "description": "Recommended accommodation type",
-            "template": "string"
-          },
-          "meals": {
-            "type": "array",
-            "template": "array",
-            "items": {
-              "type": "string",
-              "template": "string"
-            },
-            "description": "Meal recommendations"
-          },
-          "weatherForecast": {
-            "type": "string",
-            "description": "Weather forecast if available",
-            "template": "string"
-          }
-        }
-      }
+      "template": "array"
     },
     "attractions": {
-      "type": "array",
+      "type": "string",
       "description": "Detailed information about attractions",
-      "template": "array",
-      "items": {
-        "type": "object",
-        "template": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "template": "string"
-          },
-          "type": {
-            "type": "string",
-            "template": "string"
-          },
-          "location": {
-            "type": "string",
-            "template": "string"
-          },
-          "distanceFromStart": {
-            "type": "number",
-            "template": "number"
-          },
-          "description": {
-            "type": "string",
-            "template": "string"
-          },
-          "entryFee": {
-            "type": "number",
-            "template": "number"
-          },
-          "openingHours": {
-            "type": "string",
-            "template": "string"
-          },
-          "coordinates": {
-            "type": "object",
-            "template": "object",
-            "properties": {
-              "latitude": {
-                "type": "number",
-                "template": "number"
-              },
-              "longitude": {
-                "type": "number",
-                "template": "number"
-              }
-            }
-          }
-        }
-      }
+      "template": "array"
     },
     "transportation": {
-      "type": "object",
+      "type": "string",
       "description": "Transportation details",
-      "template": "object",
-      "properties": {
-        "vehicleType": {
-          "type": "string",
-          "template": "string"
-        },
-        "totalDistanceKm": {
-          "type": "number",
-          "template": "number"
-        },
-        "fuelNeeded": {
-          "type": "number",
-          "description": "Estimated fuel needed in liters",
-          "template": "number"
-        },
-        "fuelCostEstimate": {
-          "type": "number",
-          "template": "number"
-        },
-        "mileage": {
-          "type": "number",
-          "description": "Assumed km per liter",
-          "template": "number"
-        },
-        "chargingStops": {
-          "type": "array",
-          "template": "array",
-          "items": {
-            "type": "string",
-            "template": "string"
-          },
-          "description": "EV charging stations if applicable"
-        }
-      }
+      "template": "object"
     },
     "accommodations": {
-      "type": "array",
+      "type": "string",
       "description": "Recommended accommodations",
-      "template": "array",
-      "items": {
-        "type": "object",
-        "template": "object",
-        "properties": {
-          "location": {
-            "type": "string",
-            "template": "string"
-          },
-          "type": {
-            "type": "string",
-            "template": "string"
-          },
-          "pricePerNight": {
-            "type": "number",
-            "template": "number"
-          },
-          "rating": {
-            "type": "string",
-            "template": "string"
-          },
-          "amenities": {
-            "type": "array",
-            "template": "array",
-            "items": {
-              "type": "string",
-              "template": "string"
-            }
-          }
-        }
-      }
+      "template": "array"
     },
     "risks": {
-      "type": "array",
+      "type": "string",
       "description": "Potential risks and considerations",
-      "template": "array",
-      "items": {
-        "type": "string",
-        "template": "string"
-      }
+      "template": "array"
     },
     "recommendations": {
-      "type": "array",
+      "type": "string",
       "description": "Additional recommendations",
-      "template": "array",
-      "items": {
-        "type": "string",
-        "template": "string"
-      }
+      "template": "array"
     },
     "maps": {
-      "type": "array",
+      "type": "string",
       "description": "Map URLs for navigation",
-      "template": "array",
-      "items": {
-        "type": "string",
-        "template": "string"
-      }
+      "template": "array"
     },
     "generatedAt": {
       "type": "string",
