@@ -2,7 +2,7 @@
   "title": "Personalized Tourist Planner Output",
   "description": "Generated itinerary with cost breakdown and recommendations",
   "type": "object",
-  "schemaVersion": 1,
+  "actorOutputSchemaVersion": 1,
   "properties": {
     "success": {
       "type": "boolean",
