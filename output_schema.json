@@ -1,0 +1,83 @@
+{
+  "title": "Personalized Tourist Planner Output",
+  "description": "Generated itinerary with cost breakdown and recommendations",
+  "type": "object",
+  "actorOutputSchemaVersion": 1,
+  "properties": {
+    "success": {
+      "type": "string",
+      "description": "Whether the itinerary generation was successful",
+      "template": "boolean"
+    },
+    "startLocation": {
+      "type": "string",
+      "description": "Geocoded start location details",
+      "template": "object"
+    },
+    "totalCost": {
+      "type": "string",
+      "description": "Total estimated cost in INR",
+      "template": "number"
+    },
+    "costBreakdown": {
+      "type": "string",
+      "description": "Detailed cost breakdown",
+      "template": "object"
+    },
+    "costEstimateAccuracy": {
+      "type": "string",
+      "description": "Accuracy range of cost estimate",
+      "template": "string"
+    },
+    "itinerary": {
+      "type": "string",
+      "description": "Day-by-day itinerary",
+      "template": "array"
+    },
+    "attractions": {
+      "type": "string",
+      "description": "Detailed information about attractions",
+      "template": "array"
+    },
+    "transportation": {
+      "type": "string",
+      "description": "Transportation details",
+      "template": "object"
+    },
+    "accommodations": {
+      "type": "string",
+      "description": "Recommended accommodations",
+      "template": "array"
+    },
+    "risks": {
+      "type": "string",
+      "description": "Potential risks and considerations",
+      "template": "array"
+    },
+    "recommendations": {
+      "type": "string",
+      "description": "Additional recommendations",
+      "template": "array"
+    },
+    "maps": {
+      "type": "string",
+      "description": "Map URLs for navigation",
+      "template": "array"
+    },
+    "generatedAt": {
+      "type": "string",
+      "description": "Timestamp when itinerary was generated",
+      "template": "string"
+    },
+    "llmModel": {
+      "type": "string",
+      "description": "LLM model used for optimization",
+      "template": "string"
+    },
+    "error": {
+      "type": "string",
+      "description": "Error message if generation failed",
+      "template": "string"
+    }
+  }
+}
