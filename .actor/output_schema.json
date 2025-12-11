@@ -6,94 +6,118 @@
   "properties": {
     "success": {
       "type": "boolean",
-      "description": "Whether the itinerary generation was successful"
+      "description": "Whether the itinerary generation was successful",
+      "template": "boolean"
     },
     "startLocation": {
       "type": "object",
       "description": "Geocoded start location details",
+      "template": "object",
       "properties": {
         "name": {
-          "type": "string"
+          "type": "string",
+          "template": "string"
         },
         "latitude": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         },
         "longitude": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         }
       }
     },
     "totalCost": {
       "type": "number",
-      "description": "Total estimated cost in INR"
+      "description": "Total estimated cost in INR",
+      "template": "number"
     },
     "costBreakdown": {
       "type": "object",
       "description": "Detailed cost breakdown",
+      "template": "object",
       "properties": {
         "fuel": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         },
         "stay": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         },
         "food": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         },
         "attractions": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         },
         "misc": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         }
       }
     },
     "costEstimateAccuracy": {
       "type": "string",
       "description": "Accuracy range of cost estimate",
-      "example": "±10%"
+      "template": "string"
     },
     "itinerary": {
       "type": "array",
       "description": "Day-by-day itinerary",
+      "template": "array",
       "items": {
         "type": "object",
+        "template": "object",
         "properties": {
           "day": {
-            "type": "integer"
+            "type": "integer",
+            "template": "number"
           },
           "places": {
             "type": "array",
+            "template": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "template": "string"
             }
           },
           "distance": {
             "type": "number",
-            "description": "Distance for the day in km"
+            "description": "Distance for the day in km",
+            "template": "number"
           },
           "cost": {
             "type": "number",
-            "description": "Estimated cost for the day"
+            "description": "Estimated cost for the day",
+            "template": "number"
           },
           "activities": {
             "type": "string",
-            "description": "List of activities and notes"
+            "description": "List of activities and notes",
+            "template": "string"
           },
           "accommodation": {
             "type": "string",
-            "description": "Recommended accommodation type"
+            "description": "Recommended accommodation type",
+            "template": "string"
           },
           "meals": {
             "type": "array",
+            "template": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "template": "string"
             },
             "description": "Meal recommendations"
           },
           "weatherForecast": {
             "type": "string",
-            "description": "Weather forecast if available"
+            "description": "Weather forecast if available",
+            "template": "string"
           }
         }
       }
@@ -101,38 +125,50 @@
     "attractions": {
       "type": "array",
       "description": "Detailed information about attractions",
+      "template": "array",
       "items": {
         "type": "object",
+        "template": "object",
         "properties": {
           "name": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "type": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "location": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "distanceFromStart": {
-            "type": "number"
+            "type": "number",
+            "template": "number"
           },
           "description": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "entryFee": {
-            "type": "number"
+            "type": "number",
+            "template": "number"
           },
           "openingHours": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "coordinates": {
             "type": "object",
+            "template": "object",
             "properties": {
               "latitude": {
-                "type": "number"
+                "type": "number",
+                "template": "number"
               },
               "longitude": {
-                "type": "number"
+                "type": "number",
+                "template": "number"
               }
             }
           }
@@ -142,28 +178,36 @@
     "transportation": {
       "type": "object",
       "description": "Transportation details",
+      "template": "object",
       "properties": {
         "vehicleType": {
-          "type": "string"
+          "type": "string",
+          "template": "string"
         },
         "totalDistanceKm": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         },
         "fuelNeeded": {
           "type": "number",
-          "description": "Estimated fuel needed in liters"
+          "description": "Estimated fuel needed in liters",
+          "template": "number"
         },
         "fuelCostEstimate": {
-          "type": "number"
+          "type": "number",
+          "template": "number"
         },
         "mileage": {
           "type": "number",
-          "description": "Assumed km per liter"
+          "description": "Assumed km per liter",
+          "template": "number"
         },
         "chargingStops": {
           "type": "array",
+          "template": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "description": "EV charging stations if applicable"
         }
@@ -172,25 +216,33 @@
     "accommodations": {
       "type": "array",
       "description": "Recommended accommodations",
+      "template": "array",
       "items": {
         "type": "object",
+        "template": "object",
         "properties": {
           "location": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "type": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "pricePerNight": {
-            "type": "number"
+            "type": "number",
+            "template": "number"
           },
           "rating": {
-            "type": "string"
+            "type": "string",
+            "template": "string"
           },
           "amenities": {
             "type": "array",
+            "template": "array",
             "items": {
-              "type": "string"
+              "type": "string",
+              "template": "string"
             }
           }
         }
@@ -199,41 +251,44 @@
     "risks": {
       "type": "array",
       "description": "Potential risks and considerations",
+      "template": "array",
       "items": {
-        "type": "string"
-      },
-      "example": [
-        "Monsoon delays",
-        "Fuel price fluctuations",
-        "Weather changes"
-      ]
+        "type": "string",
+        "template": "string"
+      }
     },
     "recommendations": {
       "type": "array",
       "description": "Additional recommendations",
+      "template": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "template": "string"
       }
     },
     "maps": {
       "type": "array",
       "description": "Map URLs for navigation",
+      "template": "array",
       "items": {
-        "type": "string"
+        "type": "string",
+        "template": "string"
       }
     },
     "generatedAt": {
       "type": "string",
       "description": "Timestamp when itinerary was generated",
-      "format": "date-time"
+      "template": "string"
     },
     "llmModel": {
       "type": "string",
-      "description": "LLM model used for optimization"
+      "description": "LLM model used for optimization",
+      "template": "string"
     },
     "error": {
       "type": "string",
-      "description": "Error message if generation failed"
+      "description": "Error message if generation failed",
+      "template": "string"
     }
   }
 }
